@@ -1,5 +1,5 @@
+![IMAGE_DESCRIPTION](PN7upLkrIiNqsqsq8lxnGQeOWSm0U0Ygl_bajFTpAWc.webp)
 # GoldShop Ecommerce Project
-
 This project is an ecommerce platform for a gold shop, built using Java programming language. The platform will have both Android and iOS versions, and it will be migrated to Kotlin soon.
 
 ## Features
@@ -43,4 +43,5 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Contact
 
-If you have any questions or comments about this project, please feel free to contact me at Radman.hayatii@gmail.com
+If you have any questions or comments about this project, please feel free to contact me at linkedin.com/in/radman-hayati
+
