@@ -1,5 +1,3 @@
-
-
 # GoldShop Ecommerce Project
 
 This project is an ecommerce platform for a gold shop, built using Java programming language. The platform will have both Android and iOS versions, and it will be migrated to Kotlin soon.
