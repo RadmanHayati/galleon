@@ -43,5 +43,6 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 ## Contact
 
-If you have any questions or comments about this project, please feel free to contact me at linkedin.com/in/radman-hayati
+If you have any questions or comments about this project, please feel free to contact me at
+linkedin.com/in/radman-hayati
 
