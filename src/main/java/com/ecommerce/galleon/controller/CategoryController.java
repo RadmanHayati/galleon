@@ -1,8 +1,11 @@
 package com.ecommerce.galleon.controller;
 
+import com.ecommerce.galleon.common.ApiResponse;
 import com.ecommerce.galleon.model.Category;
 import com.ecommerce.galleon.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,9 +18,9 @@ public class CategoryController {
     CategoryService categoryService;
 
     @PostMapping("/create")
-    public String createCategory(@RequestBody Category category) {
+    public ResponseEntity<ApiResponse> createCategory(@RequestBody Category category) {
         categoryService.createCategory(category);
-        return "Success";
+        return new ResponseEntity<>(new ApiResponse(true, "a new category created"), HttpStatus.CREATED);
     }
 
     @GetMapping("/list")
@@ -26,9 +29,12 @@ public class CategoryController {
     }
 
     @PostMapping("/update/{categoryId}")
-    public String updateCategory(@PathVariable("categoryId") int categoryId, @RequestBody Category category) {
+    public ResponseEntity<ApiResponse> updateCategory(@PathVariable("categoryId") int categoryId, @RequestBody Category category) {
+        if (!categoryService.categoryExists(categoryId)) {
+            return new ResponseEntity<>(new ApiResponse(false, "category does not exist"), HttpStatus.NOT_FOUND);
+        }
         categoryService.updateCategory(categoryId, category);
-        return "Success";
+        return new ResponseEntity<>(new ApiResponse(true, "category has been updated"), HttpStatus.OK);
     }
 
 }
