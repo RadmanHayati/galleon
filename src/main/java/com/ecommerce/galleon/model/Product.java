@@ -18,7 +18,7 @@ public class Product {
     private @NotNull String description;
 
 
-    // Many to one relationship
+    // Many-to-one relationship
     @ManyToOne
     @JoinColumn(name = "category_id")
     Category category;
