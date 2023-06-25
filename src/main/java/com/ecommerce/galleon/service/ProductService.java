@@ -1,6 +1,7 @@
 package com.ecommerce.galleon.service;
 
 import com.ecommerce.galleon.dto.ProductDto;
+import com.ecommerce.galleon.exceptions.ProductNotExistsException;
 import com.ecommerce.galleon.model.Category;
 import com.ecommerce.galleon.model.Product;
 import com.ecommerce.galleon.repository.ProductRepository;
@@ -60,4 +61,13 @@ public class ProductService {
         product.setPrice(productDto.getPrice());
         productRepository.save(product);
     }
+
+    public Product findById(Integer productId) throws ProductNotExistsException {
+        Optional<Product> optionalProduct = productRepository.findById(productId);
+        if (optionalProduct.isEmpty()) {
+            throw new ProductNotExistsException("product id is invalid: " + productId);
+        }
+        return optionalProduct.get();
+    }
+
 }
