@@ -6,7 +6,12 @@ public class CartDto {
     private List<CartItemDto> cartItems;
     private double totalCost;
 
-    public CartDto() {
+  /*  public CartDto() {
+    }*/
+
+    public CartDto(List<CartItemDto> cartItems, double totalCost) {
+        this.cartItems = cartItems;
+        this.totalCost = totalCost;
     }
 
     public List<CartItemDto> getCartItems() {

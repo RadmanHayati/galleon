@@ -56,10 +56,7 @@ public class CartService {
             cartItems.add(cartItemDto);
         }
 
-        CartDto cartDto = new CartDto();
-        cartDto.setTotalCost(totalCost);
-        cartDto.setCartItems(cartItems);
-        return  cartDto;
+        return new CartDto(cartItems,totalCost);
     }
 
     public void deleteCartItem(Integer cartItemId, User user) {
